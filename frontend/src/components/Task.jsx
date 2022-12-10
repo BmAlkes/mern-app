@@ -1,17 +1,17 @@
 import React from "react";
 import { FaEdit, FaCheckDouble, FaTrash } from "react-icons/fa";
 
-const Task = () => {
+const Task = ({ task, index, deleteTask, getSingleTask, setToComplete }) => {
   return (
-    <div className="task">
+    <div className={task.isCompleted ? "task completed" : "task"}>
       <p>
-        <b>1.</b>
-        Task one
+        <b>{index + 1}. </b>
+        {task.name}
       </p>
       <div className="task-icons">
-        <FaCheckDouble color="green" fontSize={20} />
-        <FaEdit color="purple" fontSize={20} />
-        <FaTrash color="red" fontSize={20} />
+        <FaCheckDouble color="green" onClick={() => setToComplete(task)} />
+        <FaEdit color="purple" onClick={() => getSingleTask(task)} />
+        <FaTrash color="red" onClick={() => deleteTask(task._id)} />
       </div>
     </div>
   );

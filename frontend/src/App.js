@@ -1,5 +1,7 @@
 import { ToastContainer } from "react-toastify";
 import TaskList from "../src/components/TaskList";
+import "react-toastify/dist/ReactToastify.css";
+export const URL = process.env.REACT_APP_BACKEND_URL;
 
 function App() {
   return (
