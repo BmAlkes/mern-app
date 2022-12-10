@@ -10,7 +10,7 @@ connectDB();
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(taskRoutes);
+app.use("/api/tasks", taskRoutes);
 // function looger(req, res, next) {
 //   console.log("middleware running");
 //   console.log(req.method);
