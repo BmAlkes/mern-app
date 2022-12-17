@@ -11,7 +11,14 @@ connectDB();
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5000",
+      "https://mern-stack-app-sna9.onrender.com/",
+    ],
+  })
+);
 app.use("/api/tasks", taskRoutes);
 // function looger(req, res, next) {
 //   console.log("middleware running");
